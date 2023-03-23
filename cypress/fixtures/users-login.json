@@ -1,0 +1,32 @@
+{
+    "success": {
+        "name": "Alyson",
+        "email": "alyson@gmail.com",
+        "password": "123456"
+    },
+    "invpass": {
+        "email": "alyson@gmail.com",
+        "password": "abcdef"
+    },
+    "email404": {
+        "email": "alyson@404.com",
+        "password": "123456"
+    },
+    "shortpass": [
+        "1",
+        "12",
+        "123",
+        "1234",
+        "12345"
+    ],
+    "invemails": [
+        "alyson&gmail.com",
+        "alyson.com.br",
+        "@gmail.com",
+        "@",
+        "alyson@",
+        "123341",
+        "@#$@!@#",
+        "xpoto122"
+    ]
+}

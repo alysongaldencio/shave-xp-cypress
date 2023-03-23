@@ -1,7 +1,7 @@
 
 import loginPage from '../support/pages/login'
 import shaversPage from '../support/pages/shavers'
-
+import data from '../fixtures/users-login.json'
 
 
 describe('login', () => {
@@ -10,14 +10,11 @@ describe('login', () => {
     context('quando submeto o formulário', () => {
 
 
-        it('deve logar com sucesso', () => {
+        it.only('deve logar com sucesso', () => {
 
-            const user = {
-                name: 'Alyson',
-                email: 'alyson@gmail.com',
-                password: '123456'
+            const user = data.success
 
-            }
+            cy.createUser(user)
 
             loginPage.submit(user.email, user.password)
 
@@ -29,11 +26,7 @@ describe('login', () => {
 
         it('não deve logar com senha incorreta', () => {
 
-            const user = {
-                name: 'Alyson',
-                email: 'alyson@gmail.com',
-                password: 'abcdef'
-            }
+            const user = data.invpass
 
             loginPage.submit(user.email, user.password)
 
@@ -46,11 +39,7 @@ describe('login', () => {
 
         it('não deve logar com email não cadastrado', () => {
 
-            const user = {
-                name: 'Alyson',
-                email: 'alyson@404.com',
-                password: 'abcdef'
-            }
+            const user = data.email404
 
             loginPage.submit(user.email, user.password)
 
@@ -74,39 +63,11 @@ describe('login', () => {
 })
 
 
-/*  context('campos obrigatórios', ()=>{
- 
-      beforeEach(()=> {
-          loginPage.submit()
-      })
- 
-      it('deve validar email', ()=>{
-          cy.get('.alert-error')
-              .should('have.length', 2)
-              .and(($small)=> {
-                  expect($small.get(0).textContent).to.equal('E-mail é obrigatório')
-                  })
- 
-      })
- 
-      it('deve validar senha', ()=>{
-          cy.get('.alert-error')
-              .should('have.length', 2)
-              .and(($small)=> {
-                  expect($small.get(1).textContent).to.equal('Senha é obrigatória')
-                  })
- 
-      })
- 
-  })
- */
-
-
 context('senha muito curta', () => {
 
-    const passwords = ['1', '12', '123', '1234', '12345']
+     
 
-    passwords.forEach((p) => {
+    data.shortpass.forEach((p) => {
         it(`não deve logar com a senha: ${p}`, () => {
             loginPage.submit('alyson@gmail.com', p)
             loginPage.alertShouldBe('Pelo menos 6 caracteres')
@@ -119,9 +80,7 @@ context('senha muito curta', () => {
 
 context('email no formato correto', () => {
 
-    const emails = ['alyson&gmail.com', 'alyson.com.br', '@gmail.com', '@', 'alyson@', '123341', '@#$@!@#', 'xpoto122']
-
-    emails.forEach((e) => {
+    data.invemails.forEach((e) => {
         it(`não deve logar com email : ${e}`, () => {
             loginPage.submit(e, '123456')
             loginPage.alertShouldBe('Informe um email válido')
