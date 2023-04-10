@@ -1,0 +1,17 @@
+{
+    "customer": {
+        "name": "Greg",
+        "email": "greg@gmail.com",
+        "password": "654321",
+        "is_shaver": false
+    },
+
+    "shaver": {
+        "name": "Jeremy Adams"
+    },
+    
+    "service": {
+        "description": "Corte de cabelo",
+        "price": "79,99"
+    }
+}
