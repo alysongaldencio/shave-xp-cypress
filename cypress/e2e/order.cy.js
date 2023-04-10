@@ -14,9 +14,7 @@ describe('pedido', () => {
         before(() => {
             cy.createUser(customer)
             cy.log(JSON.stringify(customer))
-                       
-           //cy.loginApi(customer) //debito login por api sem funcionar
-           cy.loginApi(customer)
+            cy.loginApi(customer)
         })
 
         it('deve poder solicitar serviços', () => {
