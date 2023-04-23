@@ -24,7 +24,7 @@ describe('esqueci minha senha', () => {
 
     })
 
-    context.only('quando o usuário solicita o resgate de senha', () => {
+    context('quando o usuário solicita o resgate de senha', () => {
 
         const user = {
             name: "João",
