@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 const { defineConfig } = require("cypress");
 
 const { removeUser } = require('./cypress/support/tasks/database')
@@ -7,12 +9,18 @@ module.exports = defineConfig({
     setupNodeEvents(on, config) {
       // implement node event listeners here
       on('task', {
-        removeUser 
+        removeUser
       })
     },
+
+    env: {
+      apiUrl: process.env.API_URL,
+      apiHelper: process.env.API_HELPER
+    },
+
     viewportHeight: 1080,
     viewportWidth: 1920,
-    baseUrl: 'http://localhost:3000'
+    baseUrl: process.env.BASE_URL
 
   },
 });
