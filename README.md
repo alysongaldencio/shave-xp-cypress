@@ -1,5 +1,4 @@
-# shave-xp-cypress
-Repositório dos Testes Automatizados construídos no Bootcamp Cypress eXperience da QAxperience
+
 Olá pessoal,
 Estes testes foram criados para uma pequena aplicação web de uma barbearia que roda em um totem de autoatendimento. 
 O objetivo é garantir que todas as funcionalidades do aplicativo estejam funcionando corretamente e sem erros, 
