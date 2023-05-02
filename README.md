@@ -16,12 +16,4 @@ joi: biblioteca para validação de dados em Node.js.
 nodemon: biblioteca que monitora alterações no código e reinicia automaticamente a aplicação.
 pg: driver para conexão com bancos de dados PostgreSQL.
 
-Como executar os testes (importante resaltar que os testes foram desenvolvidos para a aplicação Shave-Xp fornecida pela QAxperience rodando em ambiente local)
-Para executar os testes, siga as instruções abaixo:
 
-Clone este repositório em sua máquina local.
-Instale as dependências com o comando npm install.
-Crie um arquivo .env na raiz do projeto e preencha as variáveis de ambiente necessárias.
-Inicie o servidor de teste com o comando npm run start.
-Em outra janela do terminal, execute os testes com o comando npm run cypress.
-Os resultados dos testes serão exibidos no terminal e também serão enviados para o Tesults, onde será gerado um relatório detalhado.
